@@ -8,6 +8,8 @@ use PayPal\Api\Authorization;
 use PayPal\Api\Capture;
 use PayPal\Api\CreditCard;
 use PayPal\Api\CreditCardToken;
+use PayPal\Api\Currency;
+use PayPal\Exception\PayPalConnectionException;
 use PayPal\Api\FlowConfig;
 use PayPal\Api\FundingInstrument;
 use PayPal\Api\Item;
@@ -21,6 +23,9 @@ use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\PaymentHistory;
 use PayPal\Api\Presentation;
+use PayPal\Api\Payout;
+use PayPal\Api\PayoutItem;
+use PayPal\Api\PayoutSenderBatchHeader;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Refund;
 use PayPal\Api\RelatedResources;
@@ -90,6 +95,14 @@ class Paypal{
     public  function creditCardToken()
     {
         return new CreditCardToken;
+    }
+
+    /**
+     * @return Paypal\Api\Currency
+     */
+    public function Currency()
+    {
+        return new Currency;
     }
 
     /**
@@ -199,6 +212,29 @@ class Paypal{
     public  function redirectUrls()
     {
         return new RedirectUrls;
+    }
+
+    /**
+     * @return Paypal\Api\Payout
+     */
+    public  function payout()
+    {
+        return new Payout;
+    }
+    /**
+     * @return Paypal\Api\PayoutItem
+     */
+    public function PayoutItem()
+    {
+        return new PayoutItem;
+    }
+
+    /**
+     * @return Paypal\Api\PayoutSenderBatchHeader
+     */
+    public function PayoutSenderBatchHeader()
+    {
+        return new PayoutSenderBatchHeader;
     }
 
     /**
